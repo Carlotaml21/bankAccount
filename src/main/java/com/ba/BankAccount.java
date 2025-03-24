@@ -28,8 +28,14 @@ public class BankAccount {
             depositCount++;
         }
     }
-
+    public void withdraw(float amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            withdrawCount++;
+        }
+    }
 }
+
 
 
 
