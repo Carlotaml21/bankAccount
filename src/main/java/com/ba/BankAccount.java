@@ -21,6 +21,14 @@ public class BankAccount {
     public float getAnnualRate() {
         return annualRate;
     }
+
+    public void deposit(float amount) {
+        if (amount > 0) {
+            balance += amount;
+            depositCount++;
+        }
+    }
+
 }
 
 
