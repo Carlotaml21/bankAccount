@@ -22,6 +22,10 @@ public class BankAccount {
         return annualRate;
     }
 
+    public void setMonthlyFee(float fee) {
+        this.monthlyFee = fee;
+    }
+
     public void deposit(float amount) {
         if (amount > 0) {
             balance += amount;
