@@ -34,6 +34,12 @@ public class BankAccount {
             withdrawCount++;
         }
     }
+
+    public void calculateMonthlyInterest() {
+        float monthlyRate = annualRate / 12;
+        float interest = balance * monthlyRate;
+        balance += interest;
+    }
 }
 
 
