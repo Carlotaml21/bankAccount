@@ -26,4 +26,14 @@ public class BankAccountTest {
         assertEquals(1212f, account.getBalance(),0.001f);
     }
 
+    @Test
+    public void testMonthlyStatementUpdates(){
+        BankAccount account = new BankAccount(1000f, 0.12f);
+        account.setMonthlyFee(10f);
+
+        account.monthlyStatement();
+
+        assertEquals(999.9f, account.getBalance(), 0.001f)
+    }
+
 }
