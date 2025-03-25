@@ -25,5 +25,17 @@ public class SavingsAccount extends BankAccount {
             super.withdraw(amount);
         }
     }
+    @Override
+    public void monthlyStatement() {
+        int extraWithdrawals = Math.max(0, getWithdrawCount() - 4);
+        float extraFees = extraWithdrawals * 1000f;
+
+        setMonthlyFee(getMonthlyFee() + extraFees);
+
+        super.monthlyStatement();
+
+        this.active = getBalance() >= 10000;
+    }
+
 
 }
