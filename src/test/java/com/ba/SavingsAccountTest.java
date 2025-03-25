@@ -62,5 +62,19 @@ public class SavingsAccountTest {
 
     }
 
+    @Test
+    public void testPrintDetailsInfo(){
+        SavingsAccount account = new SavingsAccount(12000f, 0.05f);
+
+        account.setMonthlyFee(500f);
+        account.deposit(1000f);
+        account.withdraw(500f);
+
+        String details = account.printDetailsInfo();
+        assertTrue(details.contains("Saldo: 12500.0"));
+        assertTrue(details.contains("Comisión mensual: 500.0"));
+        assertTrue(details.contains("Transacciones: 2"));
+    }
+
 
 }
