@@ -49,6 +49,15 @@ public class BankAccount {
         balance -= monthlyFee;
         calculateMonthlyInterest();
     }
+
+    public String printAccountInfo() {
+        return "Saldo: " + balance + "\n" +
+            "Tasa anual: " + annualRate + "\n" +
+            "Depósitos: " + depositCount + "\n" +
+            "Retiros: " + withdrawCount + "\n" +
+            "Comisión mensual: " + monthlyFee;
+    }
+
 }
 
 
