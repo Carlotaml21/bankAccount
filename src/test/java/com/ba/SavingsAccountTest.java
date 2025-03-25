@@ -10,4 +10,18 @@ public class SavingsAccountTest {
         SavingsAccount account = new SavingsAccount(12000f, 0.05f);
         assertTrue(account.isActive());
     }
+
+    @Test
+    public void testSavingsAccountIsInactive() {
+        SavingsAccount account = new SavingsAccount(5000f, 0.05f);
+        assertFalse(account.isActive());
+    }
+
+    @Test
+    public void testDepositInActiveAccountIncreases(){
+        SavingsAccount account = new SavingsAccount(12000f, 0.05f);
+        account.deposit(1000f);
+        assertEquals(13000, account.getBalance(), 0.001f);
+    }
+
 }
