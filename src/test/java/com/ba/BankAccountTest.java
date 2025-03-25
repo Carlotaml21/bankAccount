@@ -33,7 +33,7 @@ public class BankAccountTest {
 
         account.monthlyStatement();
 
-        assertEquals(999.9f, account.getBalance(), 0.001f)
+        assertEquals(999.9f, account.getBalance(), 0.001f);
     }
 
 }

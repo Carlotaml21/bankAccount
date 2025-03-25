@@ -44,6 +44,11 @@ public class BankAccount {
         float interest = balance * monthlyRate;
         balance += interest;
     }
+
+    public void monthlyStatement() {
+        balance -= monthlyFee;
+        calculateMonthlyInterest();
+    }
 }
 
 
