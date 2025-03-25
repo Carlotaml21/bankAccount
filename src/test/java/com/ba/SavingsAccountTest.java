@@ -39,4 +39,28 @@ public class SavingsAccountTest {
 
     }
 
+    @Test
+    public void testExtraFeesForWithdrawOver4(){
+        SavingsAccount account = new SavingsAccount(12000f, 0.05f);
+
+        account.withdraw(1000f);
+        account.withdraw(1000f);
+        account.withdraw(1000f);
+        account.withdraw(1000f);
+        account.withdraw(1000f);
+        account.withdraw(1000f);
+
+        account.monthlyStatement();
+
+        float expectedBalanceBeforeInterest = 12000f - 6000f - (2*1000f);
+        float expectedInterest = expectedBalanceBeforeInterest * (0.05f /12);
+        float expectedBalanceAfterInterest = expectedBalanceBeforeInterest + expectedInterest;
+
+        assertEquals(expectedBalanceAfterInterest, account.getBalance(), 0.001f);
+
+        assertFalse(account.isActive());
+
+    }
+
+
 }
