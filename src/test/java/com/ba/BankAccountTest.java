@@ -18,4 +18,12 @@ public class BankAccountTest {
         assertEquals(700f , account.getBalance(),0.001f);
     }
 
+    @Test
+    public void testCalculateMonthlyInterest(){
+        BankAccount account = new BankAccount(1200f, 0.12f);
+        account.calculateMonthlyInterest();
+
+        assertEquals(1212f, account.getBalance(),0.001f);
+    }
+
 }
