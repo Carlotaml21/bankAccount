@@ -33,9 +33,9 @@ public class SavingsAccountTest {
 
     @Test
     public void testWithdrawInInactiveAccountNotChange(){
-        SavingsAccount account = new SavingsAccount(12000f, 0.05f);
+        SavingsAccount account = new SavingsAccount(5000f, 0.05f);
         account.withdraw(1000f);
-        assertEquals(12000, account.getBalance(), 0.001f);
+        assertEquals(5000f, account.getBalance(), 0.001f);
 
     }
 
