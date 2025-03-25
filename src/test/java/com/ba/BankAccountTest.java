@@ -36,4 +36,25 @@ public class BankAccountTest {
         assertEquals(999.9f, account.getBalance(), 0.001f);
     }
 
+    @Test
+    public void testPrintAccountInfo(){
+        BankAccount account = new BankAccount(1000f, 0.05f);
+        account.setMonthlyFee(10f);
+
+        String expected = "Saldo: 1000.0\n" +
+            "Tasa anual: 0.05\n" +
+            "Depósitos: 0\n" +
+            "Retiros: 0\n" +
+            "Comisión mensual: 10.0";
+
+        String actual = account.printAccountInfo();
+
+        assertEquals(expected, actual);
+    }
+
+
+
+}
+
+
 }
