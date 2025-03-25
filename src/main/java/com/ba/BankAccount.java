@@ -21,6 +21,9 @@ public class BankAccount {
     public float getAnnualRate() {
         return annualRate;
     }
+    public int getDepositCount() {
+        return depositCount;
+    }
 
     public int getWithdrawCount() {
         return withdrawCount;
