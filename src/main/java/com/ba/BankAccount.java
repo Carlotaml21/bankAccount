@@ -22,6 +22,14 @@ public class BankAccount {
         return annualRate;
     }
 
+    public int getWithdrawCount() {
+        return withdrawCount;
+    }
+
+    public float getMonthlyFee() {
+        return monthlyFee;
+    }
+
     public void setMonthlyFee(float fee) {
         this.monthlyFee = fee;
     }
