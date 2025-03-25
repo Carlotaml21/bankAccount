@@ -24,4 +24,19 @@ public class SavingsAccountTest {
         assertEquals(13000, account.getBalance(), 0.001f);
     }
 
+    @Test
+    public void testWithdrawInActiveAccountDecreases(){
+        SavingsAccount account = new SavingsAccount(12000f, 0.05f);
+        account.withdraw(1000f);
+        assertEquals(11000, account.getBalance(), 0.001f);
+    }
+
+    @Test
+    public void testWithdrawInInactiveAccountNotChange(){
+        SavingsAccount account = new SavingsAccount(12000f, 0.05f);
+        account.withdraw(1000f);
+        assertEquals(12000, account.getBalance(), 0.001f);
+
+    }
+
 }
