@@ -39,6 +39,13 @@ public class CheckingAccount  extends BankAccount {
                 super.deposit(amount);
             }
         }
+
+    @Override
+    public void monthlyStatement() {
+        super.monthlyStatement();
     }
+
+
+}
 
 
