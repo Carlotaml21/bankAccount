@@ -52,7 +52,7 @@ Adds an attribute `overdraft` (`float`), initialized to 0, to track any overdraf
 - `monthlyStatement()`: Inherits functionality from the parent class.
 
 #### Additional Method:
-- `printDetails()`: Returns the balance, monthly fee, number of transactions, and the overdraft amount.
+- `printDetailsInfo()`: Returns the balance, monthly fee, number of transactions, and the overdraft amount.
 
 ---
 
