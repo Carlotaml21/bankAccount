@@ -19,12 +19,14 @@ public class SavingsAccount extends BankAccount {
             super.deposit(amount);
         }
     }
+
     @Override
-    public void withdraw(float amount){
-        if (active){
+    public void withdraw(float amount) {
+        if (active) {
             super.withdraw(amount);
         }
     }
+
     @Override
     public void monthlyStatement() {
         int extraWithdrawals = Math.max(0, getWithdrawCount() - 4);
@@ -37,5 +39,12 @@ public class SavingsAccount extends BankAccount {
         this.active = getBalance() >= 10000;
     }
 
+    public String printDetailsInfo() {
+        int transacciones = getDepositCount() + getWithdrawCount();
+
+        return "Saldo: " + getBalance() + "\n" +
+            "Comisión mensual: " + getMonthlyFee() + "\n" +
+            "Transacciones: " + transacciones;
+    }
 
 }
