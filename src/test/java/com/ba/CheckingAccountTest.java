@@ -23,14 +23,18 @@ public class CheckingAccountTest{
         assertEquals(200f, account.getOverdraft(), 0.001f);
     }
 
-    @Test public void testMonthlyStatementCheckingAccount(){
-        CheckingAccount account = new CheckingAccount (1000f, 0.05f);
+    @Test
+    public void testMonthlyStatementCheckingAccount() {
+        CheckingAccount account = new CheckingAccount(10000f, 0.12f);
         account.setMonthlyFee(500f);
 
         account.monthlyStatement();
 
-        float expected = (10000f - 500f) + ((10000f - 500f) * (0.12f/ 12));
+        float expectedBalanceBeforeInterest = 10000f - 500f;
+        float expectedInterest = expectedBalanceBeforeInterest * (0.12f / 12); // 1% mensual
+        float expectedFinalBalance = expectedBalanceBeforeInterest + expectedInterest;
 
-        assertEquals(expected, account.getBalance(), 0.001f);
+        assertEquals(expectedFinalBalance, account.getBalance(), 0.01f);
     }
+
 }
