@@ -37,4 +37,19 @@ public class CheckingAccountTest{
         assertEquals(expectedFinalBalance, account.getBalance(), 0.01f);
     }
 
+    @Test
+    public void testPrintInfoCheckingAccount() {
+        CheckingAccount account = new CheckingAccount(10000f, 0.12f);
+        account.setMonthlyFee(500f);
+        account.deposit(1000f);
+        account.withdraw(1500f);
+
+        String details = account.printCheckAccountInfo();
+
+        assertTrue(details.contains("Saldo: 9500.0"));
+        assertTrue(details.contains("Comisión mensual: 500.0"));
+        assertTrue(details.contains("Transacciones: 2"));
+        assertTrue(details.contains("Sobregiro: 500.0"));
+    }
+
 }
