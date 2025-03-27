@@ -45,6 +45,15 @@ public class CheckingAccount  extends BankAccount {
         super.monthlyStatement();
     }
 
+    public String printCheckAccountInfo() {
+        int totalTtransanctions = getDepositCount() + getWithdrawCount();
+
+        return "Saldo: " + getBalance() + "\n" +
+            "Comisión mensual: " + getMonthlyFee() + "\n" +
+            "Transacciones: " + totalTtransanctions + "\n" +
+            "Sobregiro: " + overdraft;
+    }
+
 
 }
 
